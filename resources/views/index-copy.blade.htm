@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <div x-data="{ todos: [] }">
+        <input x-model="newTodo" type="text" placeholder="Add new todo">
+        <button @click="todos.push(newTodo); newTodo = ''">Add</button>
+        <ul>
+            <template x-for="(todo, index) in todos" :key="index">
+                <li x-text="todo"></li>
+            </template>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js"></script>
+</body>
+</html>
